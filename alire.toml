@@ -1,0 +1,31 @@
+name = "stm32f1xx_hal"
+description = ""
+version = "0.1.0-dev"
+
+authors = ["Your Name"]
+maintainers = ["Your Name <example@example.com>"]
+maintainers-logins = ["github-username"]
+licenses = "MIT OR Apache-2.0 WITH LLVM-exception"
+website = ""
+tags = []
+
+[gpr-externals]
+BUILD_MODE = ["debug", "optimize"]
+
+[gpr-set-externals]
+BUILD_MODE = "debug"
+
+[configuration.values]
+cortex_m.core = "m0"
+
+[[depends-on]]
+gnat_arm_elf = "^14.2.1"
+
+[[depends-on]]
+hal = "^1.0.0"
+
+[[depends-on]]
+cortex_m = "^1.1.0-dev"
+
+[[pins]]
+cortex_m = { path='../cortex-m' }
